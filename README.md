@@ -14,11 +14,12 @@ JAVA SE ==> core --> desktop e servidores
 JAVA EE --> para empresas
 
 JVM --> maquina virtual do java ==> necessaria pra executar aplicações em JAVA
-
-ESTRUTURA DE UMA APLICAÇÃO JAVA --> java é uma linguagem orientada a objetos , ou seja ||esta tudo em classes e pacotes são conjuntos lógicos de classes , as class e packages
+---
+ESTRUTURA DE UMA APLICAÇÃO JAVA --> java é uma linguagem orientada a objetos , ou seja esta tudo em classes e pacotes são conjuntos lógicos de classes , as class e packages
 Módulos são agrupamentos lógicos de pacotes relacionados 
 Runtime = agrupamento físico , ou seja , separados fisicamente por pastas
 aplicação = agrupamento de modulos
+---
 
 
 
