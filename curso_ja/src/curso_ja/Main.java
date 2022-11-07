@@ -151,7 +151,7 @@ public class Main {
 		// toma cuidado com quebra de LINHA PENDENTE 
 		// acionamos um inteiro ali em cima , assim fazemos um nextline() extra
 		//para consumir a quebra de linha pendente 
-		// antes do dados que queremos damos um nextline() extra 
+		// antes do dados que queremos damos um nextline() extra  
 
 		String name, country, tel;
 
@@ -170,6 +170,27 @@ public class Main {
 
 
 		sc.close();
+
+		//Funções matemáticas 
+
+		// A = Math.sqrt(x); --> Variavel A recebe a raiz quadrada de X 
+		// A = Math.pow(x,y); --> Variavel A recebe o resultado de X elevado a Y
+		// A = Math.abs(x); --> variavel A recebe o valor absoluto de x
+
+		//Exemplos na pratica
+		double gw = 6;
+		double ty = 3;
+		double io = -9;
+		double A,D,C;
+
+		A = Math.sqrt(gw);
+		System.out.println(A);
+		D = Math.pow(gw, ty);
+		System.out.println(D);
+		C = Math.abs(io);
+		System.out.println(C);
+
+
 
 	}
 }
