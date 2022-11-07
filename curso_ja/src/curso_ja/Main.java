@@ -178,7 +178,7 @@ public class Main {
 		// A = Math.abs(x); --> variavel A recebe o valor absoluto de x
 
 		//Exemplos na pratica
-		double gw = 6;
+		double gw = 9;
 		double ty = 3;
 		double io = -9;
 		double A,D,C;
@@ -189,7 +189,9 @@ public class Main {
 		System.out.println(D);
 		C = Math.abs(io);
 		System.out.println(C);
-
+		//essas expressões podem participar de expressões maiores 
+		// por exemplo x= Math.pow(b,2.0)-4*a*c
+		
 
 
 	}
