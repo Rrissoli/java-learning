@@ -37,19 +37,52 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("quantas horas?");
 		int h = sc.nextInt();
-		System.out.println("Bom Dia");
-		if(h > 12 && h < 19){
-		// se essa condição for falsa todo o bloco não vai ser executado, se for cerdadeira vai rodar
-			System.out.println("Boa Tarde");	
-		}
-		else{
-			//aqui vai ser executado se não entrar no de cima, ou seja se a condição do if for falsa , executa, se for verdadeira , não executa 
-			System.out.println("Boa Noite");
-		}
+		// System.out.println("Bom Dia");
+		// if(h > 12 && h < 19){
+		// // se essa condição for falsa todo o bloco não vai ser executado, se for cerdadeira vai rodar
+		// 	System.out.println("Boa Tarde");	
+		// }
+		// else{
+		// 	//aqui vai ser executado se não entrar no de cima, ou seja se a condição do if for falsa , executa, se for verdadeira , não executa 
+		// 	System.out.println("Boa Noite");
+		// }
 		
+		//Vamos deixar mais complexo , com um encadeamento de estruturas condicionais, ou seja colocamos if junto a else
+		// chamamos de else if
+		// dessa maneira 
+		if(h < 12){
+			System.out.println("bom dia");
+		}else if(12 <= h && h < 19){
+			System.out.println("boa tarde");
+		}else{
+			System.out.println("boa noite");
+		}
 
+		// Operadores de operação cumulativa
+		//Sem operdaor
+		// int minutos = sc.nextInt();
+		// double conta = 50;
+		// if(minutos > 100){
+		// 	conta = conta + (minutos - 100) * 200;
+			
+		// }
+		// System.out.printf("Valor da conta %.2f %n", conta);
 
-
+		// operadores
+		// a+= b === a = a + b;
+		// a-= b === a = a - b;
+		// a*= b === a = a * b;
+		// a/= b === a = a / b;
+		// a%= b === a = a % b;
+		//ou seja 
+//COM OPERADOR
+		 int minutos = sc.nextInt();
+		 double conta = 50;
+		 if(minutos > 100){
+		 	conta += (minutos - 100) * 20;
+			
+		 }
+		 System.out.printf("Valor da conta %.2f %n", conta);
 
 
 	}
