@@ -3,7 +3,7 @@ package curso_ja;
 import java.util.Locale;
 import java.util.Scanner;
 
-import javax.swing.text.Style;
+
 
 public class Main {
 	public static void main(String[]args) {
