@@ -1,5 +1,6 @@
 package curso_ja;
 
+import java.security.PermissionCollection;
 import java.util.Scanner;
 
 public class Main {
@@ -75,7 +76,7 @@ public class Main {
 		// a/= b === a = a / b;
 		// a%= b === a = a % b;
 		//ou seja 
-//COM OPERADOR
+		//COM OPERADOR
 		 int minutos = sc.nextInt();
 		 double conta = 50;
 		 if(minutos > 100){
@@ -83,8 +84,57 @@ public class Main {
 			
 		 }
 		 System.out.printf("Valor da conta %.2f %n", conta);
+		
+		//Estruturas Switch-Case
+		// Quando se tem várias opções de fluxo a serem tratadas com base no valor de uma váriavel
+		// ao invés de várias estruturas if-else encadeadas , alguns preferem utilizar o switch-case 
 
+		System.out.println("qual dia da semana ?");
+		int resposta;
+		resposta = sc.nextInt();
+		String dia; 
+		switch (resposta) {
+			case 1:
+			dia = "Domingo";
+			break;
+			case 2:
+			dia = "Segunda";
+			break;
+			case 3:
+			dia = "Terça";
+			break;
+			case 4:
+			dia = "Quarta";
+			break;
+			case 5:
+			dia = "Quinta";
+			break;
+			case 6:
+			dia = "Sexta";
+			break;
+			case 7:
+			dia = "Sabado";
+			break;
+			default:
+			dia = "valor inválido";
+			break;
+		}
+		System.out.println("Hoje é " + dia);
+		sc.close();
 
+		//expressão condicional ternaria 
+		// Estrutura opcional ao if-else quando se deseja decidir um VALOR com base em uma condição
+		// sintaxe == (condição) ? valor_se_verdadeiro : valor_se_falso
+		// exemplo
+		double  preco = 34.5;
+		
+		double desconto = (preco > 100.00 )  ?  preco * 0.1 : preco *0.2;
+		System.out.println(desconto);
+
+		// Escopo de uma variável: é a regiao do programa onde a variavel é válida, ou seja, onde ela por ser referenciada 
+		//uma váriavel não pode ser usada se não for iniciada
+		
+		
 	}
 		
 	}
