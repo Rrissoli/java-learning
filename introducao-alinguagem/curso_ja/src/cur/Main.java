@@ -1,4 +1,4 @@
-package curso_ja;
+package cur;
 
 import java.util.Locale;
 import java.util.Scanner;

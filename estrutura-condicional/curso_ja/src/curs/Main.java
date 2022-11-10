@@ -1,4 +1,4 @@
-package curso_ja;
+package curs;
 
 import java.security.PermissionCollection;
 import java.util.Scanner;
