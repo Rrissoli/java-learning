@@ -1,7 +1,9 @@
 package curso;
 
 
+import java.util.List;
 import java.util.Scanner;
+
 
 public class Main {
 	public static void main(String[]args) {
@@ -162,9 +164,56 @@ public class Main {
 		// sc.close();
 
 		// outros topicos sobre o java 
-		// 
-	}
 		
+
+		//Restrições e conveçoes para nomes
+		// não pode começar com dígito: use uma letra ou _
+		// não usar acentos ou til
+		// nao pode ter espaços em branco
+		// sugestao : use nomes que tenham significado
+		
+
+		//Funções interessantes para strings 
+		// Formatar: toLowerCase(), toUpperCase(), trim()
+		// Recortar: substring(inicio), substring(inicio, fim)
+		// substituir: Replace(char,char), Replace(string,string)
+		// Buscar: IndexOf, LastIndexOf
+		// str.split(" ")
+
+		// funcoes (sitaxe)
+		////representam um processamento que possui um significado
+		// ex : Math.sqrt(double)
+
+		//principais vantagens 
+		// modularização , delegação e reaproveitamento
+		// dados de entrada e saida 
+		// funcoes podem receber dados de entrada
+		// funcoes podem ou nao retornar algo
+		// em orientação a obj , as fun recebem nome de metodos
+
+		// criando funcoes
+
+		
+
+
+	}
+		public static int max(int x,int z,int u){
+			int aux;
+			if(x > u && x>z){
+				aux = z;
+
+			} else if (u > z){
+				aux = u;
+			}
+			else{
+				aux = z;
+			}
+			return aux;
+		}
+		public static void showResult(int value){
+			System.out.println("higher" + value);
+			
+		}
 	}
 
 	
