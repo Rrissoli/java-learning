@@ -170,8 +170,25 @@ public class Program {
 		System.out.println("deseja Remover quanto ao estoque?");
 		product1.removeProducts(cs.nextInt());
 		System.out.printf("Name: %s %n Price: %.2f %n Quantity: %d %n Total: %.2f %n", product1.name, product1.price,product1.quantity, product1.totalValueUnStock());
-		cs.close();
+		
+		
 
+		// AGORA Vamos pra OBject e toString()
+		
+		// Toda classe Java é uma subclasse da classe Object 
+		// A classe object possui os seguintes metodos:
+		// getClasse --> retorna o tipo do objeto
+		//equals --> compara se o objeto é igual ao outro
+		// hashcode --> retorna um codigo hash do objeto
+		// toString --> converte o objeto para string
+		// veremos na pratica
+
+		
+		System.out.println("dados do produto: "  + product1);
+
+
+
+		cs.close();
 		
 
 
