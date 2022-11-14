@@ -31,7 +31,7 @@ public class Main {
 	double result = renda * imposto;
 	double salario = renda - result;
 	System.out.println(salario);
-
+sc.close();
 	}
 		
 	}

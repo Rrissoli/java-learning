@@ -1,7 +1,7 @@
 package curso;
 
 
-import java.util.List;
+
 import java.util.Scanner;
 
 
@@ -193,7 +193,7 @@ public class Main {
 
 		// criando funcoes
 
-		
+	
 
 
 	}
@@ -208,6 +208,7 @@ public class Main {
 			else{
 				aux = z;
 			}
+			
 			return aux;
 		}
 		public static void showResult(int value){

@@ -1,6 +1,6 @@
 package curs;
 
-import java.security.PermissionCollection;
+
 import java.util.Scanner;
 
 public class Main {
