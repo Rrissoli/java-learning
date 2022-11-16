@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import entities.Product;
 import entities.Triangule;
+import util.Calculator;
 
 public class Program {
 	public static void main(String[] args) {
@@ -152,24 +153,24 @@ public class Program {
 
 		// Vamos fazer um programa para ler os produtos de um estoque
 
-		Scanner cs = new Scanner(System.in);
-		System.out.println("ENTER PRODUCT DATA:");
-		System.out.println("NAME:");
-		Product product1;
-		product1 = new Product();
-		product1.name = cs.nextLine();
-		System.out.println("Price:");
-		product1.price = cs.nextDouble();
-		System.out.println("Quantity:");
-		product1.quantity = cs.nextInt();
-		product1.totalValueUnStock();
-		System.out.printf("Name: %s %n Price: %.2f %n Quantity: %d %n Total: %.2f %n", product1.name, product1.price,product1.quantity, product1.totalValueUnStock());
-		System.out.println("deseja adicionar quanto ao estoque?");
-		product1.addProducts(cs.nextInt());
-		System.out.printf("Name: %s %n Price: %.2f %n Quantity: %d %n Total: %.2f %n", product1.name, product1.price,product1.quantity, product1.totalValueUnStock());
-		System.out.println("deseja Remover quanto ao estoque?");
-		product1.removeProducts(cs.nextInt());
-		System.out.printf("Name: %s %n Price: %.2f %n Quantity: %d %n Total: %.2f %n", product1.name, product1.price,product1.quantity, product1.totalValueUnStock());
+		// Scanner cs = new Scanner(System.in);
+		// System.out.println("ENTER PRODUCT DATA:");
+		// System.out.println("NAME:");
+		// Product product1;
+		// product1 = new Product();
+		// product1.name = cs.nextLine();
+		// System.out.println("Price:");
+		// product1.price = cs.nextDouble();
+		// System.out.println("Quantity:");
+		// product1.quantity = cs.nextInt();
+		// product1.totalValueUnStock();
+		// System.out.printf("Name: %s %n Price: %.2f %n Quantity: %d %n Total: %.2f %n", product1.name, product1.price,product1.quantity, product1.totalValueUnStock());
+		// System.out.println("deseja adicionar quanto ao estoque?");
+		// product1.addProducts(cs.nextInt());
+		// System.out.printf("Name: %s %n Price: %.2f %n Quantity: %d %n Total: %.2f %n", product1.name, product1.price,product1.quantity, product1.totalValueUnStock());
+		// System.out.println("deseja Remover quanto ao estoque?");
+		// product1.removeProducts(cs.nextInt());
+		// System.out.printf("Name: %s %n Price: %.2f %n Quantity: %d %n Total: %.2f %n", product1.name, product1.price,product1.quantity, product1.totalValueUnStock());
 		
 		
 
@@ -184,13 +185,43 @@ public class Program {
 		// veremos na pratica
 
 		
-		System.out.println("dados do produto: "  + product1);
+		//System.out.println("dados do produto: "  + product1);
 
 
 
-		cs.close();
+		//cs.close();
 		
 		//membros estaticos
+		// --> Tambem chamados de membros de classe , em posição e instancia
+		// --> São membros que fazerm sentido independentemente de objetos. não precisam de objeto para serem chamados
+		// --> são chamados a partir do proprio nome da classe
+
+		// aplicações comuns
+		// Classes Utilitarias e declarações constantes 
+
+		// uma classe que possui somente membros estaticos , pode ser uma classe estatica tambem, Esta classe nao podera ser instanciada
+
+
+		// para exemplificar melhor, faremos metodos para calcular circunferencia e volume de uma esfera
+		//1 versao de exemplo
+		// sem obejto
+	// 	Scanner sc = new Scanner(System.in);
+	// 	System.out.print("Enter radius: ");
+	// 	double radius = sc.nextDouble();
+	// 	double c = circumference(radius);
+	// 	double v = volume(radius);
+	// 	System.out.printf("Circumference: %.2f%n", c);
+	// 	System.out.printf("Volume: %.2f%n", v);
+	// 	System.out.printf("PI value: %.2f%n", PI);
+	// 	sc.close();
+	// }
+	// public static final double PI = 3.1223;
+	// public static double circumference(double radius) {
+	// 	return 2.0 * PI * radius;
+	// 	}
+	// 	public static double volume(double radius) {
+	// 	return 4.0 * PI * radius * radius * radius / 3.0;
+	// 	}
 
 
 
@@ -198,10 +229,44 @@ public class Program {
 
 
 
+	// 2 versao
 
-	}
+	// crio uma classe calculator que seja utilitaria
+	// estamos utilizando metodos dinamicos de classe, ou seja, por nao ser estatico temos que instanciar toda vez que chamar um objeto
+	// Scanner sc = new Scanner(System.in);
+	// System.out.print("Enter radius: ");
+	// double radius = sc.nextDouble();
+	// Calculator calc = new Calculator();
+	// // instanciação
+	// double c = calc.circumference(radius);
+	// double v = calc.volume(radius);
+	// System.out.printf("Circumference: %.2f%n", c);
+	// System.out.printf("Volume: %.2f%n", v);
+	// System.out.printf("PI value: %.2f%n", calc.PI);
+	// sc.close();	
+
+
+	//agora la na classe calculador vamos deixar seus metodos como estaticos para vermos a diferença no modo de usar
+	// versao 3
+
+	Scanner sc = new Scanner(System.in);
+	System.out.print("Enter radius: ");
+	double radius = sc.nextDouble();
+	// eu nao instancio , somente utilizo o nome da classe antes do metodo dela
+	
+
+	double c = Calculator.circumference(radius);
+	double v = Calculator.volume(radius);
+	System.out.printf("Circumference: %.2f%n", c);
+	System.out.printf("Volume: %.2f%n", v);
+	System.out.printf("PI value: %.2f%n", Calculator.PI);
+	sc.close();
 
 
 
 
+
+
+
+}
 }

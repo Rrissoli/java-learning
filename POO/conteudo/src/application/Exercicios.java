@@ -5,6 +5,7 @@ import java.util.Scanner;
 import entities.Funcionario;
 import entities.Retangule;
 import entities.Student;
+import util.CurrencyConverter;
 
 public class Exercicios {
     public static void main(String[] args) {
@@ -35,17 +36,26 @@ public class Exercicios {
         // System.out.println(funcionario1);
 
         // exercicio 3
-        Scanner pw = new Scanner(System.in);
-        Student estudante1;
-        estudante1 = new Student();
-        System.out.println("Seu nome e suas 3 notas");
-        estudante1.nome = pw.nextLine();
-        estudante1.nota1= pw.nextDouble();
-        estudante1.nota2= pw.nextDouble();
-        estudante1.nota3= pw.nextDouble();
-        System.out.println(estudante1.sePassou());
-        pw.close();
+        // Scanner pw = new Scanner(System.in);
+        // Student estudante1;
+        // estudante1 = new Student();
+        // System.out.println("Seu nome e suas 3 notas");
+        // estudante1.nome = pw.nextLine();
+        // estudante1.nota1= pw.nextDouble();
+        // estudante1.nota2= pw.nextDouble();
+        // estudante1.nota3= pw.nextDouble();
+        // System.out.println(estudante1.sePassou());
+        // pw.close();
 
+        // exercicios 4
+        Scanner opo = new Scanner(System.in);
+        System.out.println("quanto ta o dolar ?");
+        double valorDolar = opo.nextDouble();
+        System.out.println("quanto quer converter em dolares ?");
+        double qtdDolares = opo.nextDouble();
+        double valorTotal = CurrencyConverter.converter(valorDolar, qtdDolares);
+        System.out.printf("voce precisa de R$ %.2f para comprar ", valorTotal);
+        opo.close();
 
 
 
