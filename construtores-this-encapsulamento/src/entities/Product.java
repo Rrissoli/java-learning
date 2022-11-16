@@ -14,6 +14,15 @@ public class Product {
     }
 
 
+    //sobrecarga do construtor 
+    // se a pessoa nao colocar a quantidade , caira nesse construror e setara 0
+    public Product(String name, double price){
+        this.name = name;
+        this.price = price;
+        quantity = 0;
+    }
+
+
 
     //metodos
 
