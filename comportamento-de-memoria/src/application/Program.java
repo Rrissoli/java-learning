@@ -3,7 +3,9 @@ package src.application;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
+import src.entities.Funcionarios;
 import src.entities.Product;
 
 public class Program {
@@ -177,19 +179,115 @@ public class Program {
         // CRIANDO LISTA DE INTEIROS
         // colocasse o tipo wrapper class
         // colocamos Arraylist para otimizar e criar essa lista, instanciar essa lista 
-        List<Integer> list = new ArrayList<>();
-        List<String> list2 = new ArrayList<>();
-
-        list2.add("Maria");
-        list2.add("Alex");
-        list2.add("Bob");
-        list2.add("Anna");
+        // List<Integer> list = new ArrayList<>();
+        // List<String> list2 = new ArrayList<>();
         
-        for (String string : list2) {
-            System.out.println(string);
-        }
+        // //inserindo itens sem index
+        // list2.add("Maria");
+        // list2.add("Alex");
+        // list2.add("Bob");
+        // list2.add("Anna");
+        // //inserindo itens  com index
+        // list2.add(2, "Macus");
+        // list2.add(1, "locas");
+        // // como vemos o tamanho da lista
+        // list2.size();
+        // System.out.println(list2.size());
+        // //removendo item da lista
+        // list2.remove("Anna");
+        // // ou pelo index
+        // list2.remove(1);
+        // //ou remover a partir de um predicado, no caso remove todos q começam com a letra M
+        // list2.removeIf(s-> s.charAt(0) == 'M');
+        // // pegando o index do obj
+        // System.out.println("Index of Bob:  " + list2.indexOf("Bob"));
+        // //filtrar a lista , no caso somente os que tem o nome começado com "M"
+        // List<String> result = list2.stream().filter(f -> f.charAt(0) == 'M').collect(Collectors.toList());
+        // System.out.println(result);
+        // // encontrar um elemento da lista que atenda a um predicado
+        // String name = list2.stream().filter( f -> f.charAt(0) == 'A').findFirst().orElse(null);
+        // System.out.println(name);
 
 
+
+
+        // for (String string : list2) {
+        //     System.out.println(string);
+        // }
+        
+        // // Exercicio de fixação
+         Scanner sc = new Scanner(System.in);
+        
+		
+		List<Funcionarios> lista = new ArrayList<>();
+		
+		System.out.print("How many employees will be registered? ");
+		int N = sc.nextInt();
+		
+		for (int i=0; i<N; i++) {
+			
+			System.out.println();
+			System.out.println("Emplyoee #" + (i + 1) + ":");
+			System.out.print("Id: ");
+			Integer id = sc.nextInt();
+			while (hasId(lista, id)) {
+				System.out.println("Id already taken! Try again: ");
+				id = sc.nextInt();
+			}
+			
+			System.out.print("Name: ");
+			sc.nextLine();
+			String name = sc.nextLine();
+			System.out.print("Salary: ");
+			Double salario = sc.nextDouble();
+			
+			Funcionarios emp = new Funcionarios(name, salario, id);
+			
+			lista.add(emp);
+		}
+		
+		System.out.println();
+		System.out.print("Enter the employee id that will have salary increase : ");
+		int idsalary = sc.nextInt();
+
+		// Integer pos = position(list, idsalary);
+		
+		Funcionarios emp = lista.stream().filter(d -> d.getId() == idsalary).findFirst().orElse(null);
+		
+		// if (pos == null) {
+		if (emp == null) {
+			System.out.println("This id does not exist!");
+		}
+		else {
+			System.out.print("Enter the percentage: ");
+			double percent = sc.nextDouble();
+			//list.get(pos).increaseSalary(percent);
+			emp.increaseSalary(percent);
+		}
+		
+		System.out.println();
+		System.out.println("List of employees:");
+		for (Funcionarios e : lista) {
+			System.out.println(e);
+		}		
+		
+		sc.close();
+	}
+
+	public static Integer position(List<Funcionarios> list, int id) {
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).getId() == id) {
+				return i;
+			}
+		}
+		return null;
+	}
+	
+	public static boolean hasId(List<Funcionarios> list, int id) {
+		Funcionarios emp = list.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+		return emp != null;
+	}
+    
 
 
 
