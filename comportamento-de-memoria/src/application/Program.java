@@ -1,5 +1,7 @@
 package src.application;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import src.entities.Product;
@@ -78,34 +80,114 @@ public class Program {
 
 
         // 2 exemplo
-        Scanner cs = new Scanner(System.in);
+        // Scanner cs = new Scanner(System.in);
+        // System.out.println("quantos produtos sao?");
+        // int num = cs.nextInt();
+        // Product[] vect = new Product[num];
+        // for (int i = 0; i < vect.length; i++) {
+        //     cs.nextLine();
+        //     String name = cs.nextLine();
+        //     double price = cs.nextDouble();
+        //     vect[i] =  new Product(name, price);
+        // }
+        // double suma = 0.0;
+        // for (int i = 0; i < vect.length; i++) {
+        //     suma += vect[i].getPrice();
+        // }
+        // System.out.println(suma);
+        // cs.close();
 
-        System.out.println("quantos produtos sao?");
-        int num = cs.nextInt();
-        Product[] vect = new Product[num];
 
-        for (int i = 0; i < vect.length; i++) {
-            cs.nextLine();
-            String name = cs.nextLine();
-            double price = cs.nextDouble();
-            vect[i] =  new Product(name, price);
-        }
-        double suma = 0.0;
-        for (int i = 0; i < vect.length; i++) {
-            suma += vect[i].getPrice();
-        }
+
+
+
+
+        // boxing , unboxing e wrapper classes
+
+        //Boxing 
+        // é o processo  de conversão de um objeto tipo valor para um objeto tipo referencia compatível
+        // Unboxing 
+        // é p processo contrario ele converte um objetp tipo referencia ára um objeto tipo compativel
+
+        // exemplo
+        // Encaixotamento
+        int x = 2;
+        Object obj = x;
+        System.out.println(obj);
+        //sáida é 20
+        // desencaixotamento
+        int y = (int) obj;
+        System.out.println(y);
+        //saída é 20
         
-        System.out.println(suma);
+        //Wrapper classes
+        //são classes equivalente aos tipos primitivos
+        // boxing e unboxing sao naturais da linguagem
+        // Uso comum : campos de entidades em sistemas de informação(IMPORTANTE)
+        // pois tipos referencia (classes) aceitam valor null e usufruem dos recursos da POO
+
+        //Object => Number, Boolean , Character
+        //Number => Byte, Short, Integer, Long, Float, Double
+        // Boolean => boolean
+        // Character => char
+
+        // é indicado colocar nas declarações dos parametros das classes o tipo wrapper class do seu parametro como
+        // public String name;
+        //public Double idade;
+        // public Interger reais;
 
 
 
 
-        cs.close();
+        // FOR EACH
+        //exemplo, lembrar que ele parece forof
+        // String[] vect = new String[] {"maria", "bob", "alex"};
+        // for (String obj2 : vect) {
+        //     System.out.println(obj2);
+        // }
+
+
+        // LISTAS
+        // lista é uma estrutura de dados:
+        // homogenea (dados do mesmo tipo)
+        // Ordenada(elementos acessados por meio de posições )
+        // Inicia vazia, e seus elementos são alocados sob demanda
+        // cada elemento ocupa um "nó" (ou nodo) da lista
+
+        // Tipo (interface): List
+        //Classes que implementam: Arraylist, LinkedList, etc
+
+        //Vantagens 
+        // Tamanho variável
+        // Facilidade para se realizar inserções e deleções 
+        // Desvantagens :
+         // Acesso sequencial aos elementos *
+         // tamanho da lista : size()
+         // inserir elemento na lista : add(obj), add(int, obj)
+         // Remover elementos da lista: remove(obj), remove(int), removeIf(Predicate)
+         // Encontrar posição de elemento: indexOf(obj), LastIndexOf(obj)
+         // Filtrar lista com base em predicado: 
+         // List<Integer> result = list.stream().filter(x -> x > 4).collect(Collectors.toList())
+         //Encontrar primeira ocorrencia com base em predicado:
+        // Integer result = list.stream().filter(x -> x > 5).findFirst().orElse(null);
 
 
 
+        // exemplos 
+        // CRIANDO LISTA DE INTEIROS
+        // colocasse o tipo wrapper class
+        // colocamos Arraylist para otimizar e criar essa lista, instanciar essa lista 
+        List<Integer> list = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
 
-
+        list2.add("Maria");
+        list2.add("Alex");
+        list2.add("Bob");
+        list2.add("Anna");
+        
+        for (String string : list2) {
+            System.out.println(string);
+        }
 
 
 
