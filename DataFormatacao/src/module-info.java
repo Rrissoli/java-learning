@@ -5,5 +5,5 @@
  * @author user
  *
  */
-module DateFormatacao {
+module DataFormatacao {
 }
