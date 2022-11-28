@@ -1,8 +1,15 @@
 package application;
 
 import java.util.Scanner;
+
+
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.text.DateFormat;
 import java.time.Instant;
 
 public class Program {
@@ -74,10 +81,76 @@ public class Program {
         System.out.println(d02);
         //2022-11-25T21:03:59.567667069
         Instant d03 = Instant.now();
+        System.out.println(d03);
+        
+        // texto ISO 
+        LocalDateTime d04 = LocalDateTime.parse("2023-12-01T00:00:00");
+        Instant d06 = Instant.parse("2023-12-01T00:00:00-02:00");
+        
+        // texto em formato customizado
+        // ir atras do data formatter java , pois varia na formatação
+        DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        LocalDate d08 = LocalDate.parse("29/10/2021", fmt1);
+      
+        
+        System.out.println(d04);
+        System.out.println(d06);
+        System.out.println(d08);
+
+
+        // formatação
+        // transformar a data hora em formato customizado
+        DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        System.out.println(d04.format(fmt2));
+        // utilizando o .format
+        DateTimeFormatter fmt3 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        System.out.println(d02.format(fmt3));
+        // agora para formatarmos e imprimirmos o instant
+        DateTimeFormatter fmt4 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm").withZone(ZoneId.systemDefault());
+        // eu considero o fuso horario do computador local
+        System.out.println(fmt4.format(d06));
+        // nesse caso utilizamos a chamada diferente por o metodo wirhzone esta na variavel de formatação 
+        // AGORA VAMOS FAZER COM AS FORMATAÇÔES PADRÂO
+        // vamos pegar por exemplo a ISO DATE TIME
+        // para date time
+        DateTimeFormatter fmt10 = DateTimeFormatter.ISO_DATE_TIME;
+        System.out.println(fmt10.format(d02));
+        //para instant usamos iso instant
+        DateTimeFormatter fmt11 = DateTimeFormatter.ISO_INSTANT;
+        System.out.println(fmt11.format(d03));
+        
 
 
 
-	}
+
+        // CONVERTENDO DE DAtAHORA GLOBAL PArA LOCAL
+
+        LocalDate d14 = LocalDate.now();
+        LocalDateTime d15 = LocalDateTime.now();
+        Instant d17 = Instant.now();
+        Instant d20 = Instant.parse("2022-08-20T01:30:23Z");        
+        ZoneId.getAvailableZoneIds();// pega uma colecao de fusos horarios        
+        
+        LocalDate r1 = LocalDate.ofInstant(d20, ZoneId.systemDefault());// fuso do comp
+        LocalDate r2 = LocalDate.ofInstant(d20, ZoneId.of("Portugal"));// fuso de portugal
+        LocalDateTime r3 = LocalDateTime.ofInstant(d20, ZoneId.systemDefault());// fuso do comp
+        LocalDateTime r4 = LocalDateTime.ofInstant(d20, ZoneId.of("Portugal"));// fuso de portugal
+        System.out.println(r2);
+        System.out.println(r3);
+        System.out.println(r4);
+
+        // temos estas opções 
+        System.out.println(d14.getDayOfMonth());
+        System.out.println(d14.getDayOfYear());
+        System.out.println(d14.getYear());
+
+
+
+
+
+
+}
 
 
 
