@@ -9,7 +9,9 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
+import java.time.temporal.ChronoUnit;
 import java.text.DateFormat;
+import java.time.Duration;
 import java.time.Instant;
 
 public class Program {
@@ -144,11 +146,47 @@ public class Program {
         System.out.println(d14.getDayOfMonth());
         System.out.println(d14.getDayOfYear());
         System.out.println(d14.getYear());
+        
+        
+        
+        
+        // calculos com data-hora
+        LocalDate d34 = LocalDate.now();
+        LocalDateTime d35 = LocalDateTime.now();
+        Instant d65 = Instant.now();
+        Instant d67 = Instant.parse("2022-08-20T01:30:23Z");      
+        
+        LocalDate lastWeek = d34.minusDays(7);
+        LocalDate nextWeek = d34.plusDays(7);
+        System.out.println(lastWeek);
+        System.out.println(nextWeek);
 
+        LocalDateTime lastWeekTime = d35.minusDays(7);
+        LocalDateTime nextWeekTime = d35.plusDays(7);
+        LocalDateTime nextHour = d35.plusHours(1);
+        System.out.println(lastWeekTime);
+        System.out.println(nextWeekTime);
+        System.out.println(nextHour);
 
-
-
-
+        Instant lastWeeken = d65.minus(7, ChronoUnit.DAYS);
+        Instant pastWekend = d65.plus(7, ChronoUnit.DAYS);
+        System.out.println(lastWeeken);
+        System.out.println(pastWekend);
+        
+        //date
+        Duration t1 = Duration.between(lastWeekTime, d35);
+        //datetime
+        Duration t2 = Duration.between(lastWeek.atTime(0,0), d34.atTime(0,0));
+        //ou outra opção
+        Duration t3 = Duration.between(lastWeek.atStartOfDay(), d34.atStartOfDay());
+        // instant
+        Duration t4 = Duration.between(lastWeeken, d67);
+        System.out.println(t1.toHours());
+        System.out.println(t1.toDays());
+        System.out.println(t2.toDays());
+        System.out.println(t2.toHours());
+        System.out.println(t4.toDays());
+        System.out.println(t4.toHours());
 
 }
 
