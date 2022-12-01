@@ -10,3 +10,10 @@
 ## git init => inicia um repositorio
 ## git banch -M main => coloco o nome main na minha branch
 
+
+## clonar e atualizar repositorio
+## git clone git@urlGit
+
+## com o comando git log vemos os comits feitos
+
+## git diff => mostra a diferença em arquivos modificados
