@@ -17,3 +17,28 @@
 ## com o comando git log vemos os comits feitos
 
 ## git diff => mostra a diferença em arquivos modificados
+## git checkout => permite modificar temporariamente os arquivos do projeto ao estado de um dado commit ou branch
+
+## a cabeça do seu branch é seu head e o comando git checkout modifica de acordo com o id do commit
+## ou seja o id q vc escolher vira o head
+ou 
+## git checkout HEAD~1 
+## eu volto um commit abaixo do ultimo, ~*numero* eu escolho quantos commits eu volto 
+
+
+## voltando para o commit anterior sem perder as alterações que ja fiz , ou seja desfaz o ultimo commit
+## git reset --soft HEAD~1
+
+## voltar o projeto ao estado de um dado commit
+## git reset --hard *codigo do commit*
+# exemplo voltando ao penultimo commit 
+## git reset --hard HEAD~1
+
+
+## atualizar o repositorio local  ao remoto
+## git pull *nome do repositorio* *nome da branch*
+
+## apontando projeto para outro repositorio 
+## git remote set-url git@url
+
+
