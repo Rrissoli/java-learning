@@ -7,16 +7,21 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 import java.util.function.Function;
 
 import entities.enums.OrderStatus;
 import entities.enums.WorkerLevel;
+import entitiese.Client;
 import entitiese.Coments;
 import entitiese.Department;
 import entitiese.HourContract;
 import entitiese.Order;
+import entitiese.OrderItem;
+import entitiese.Ordr2;
 import entitiese.Post;
+import entitiese.Product;
 import entitiese.Workers;
 
 public class Program {
@@ -37,12 +42,12 @@ public class Program {
 			// SHIPPED,
 			// DELIVERED
 		// };
-			Order order = new Order(1080, new Date(), OrderStatus.PENDING_PAYMENT);
-			System.out.println(order);
+			// Order order = new Order(1080, new Date(), OrderStatus.PENDING_PAYMENT);
+			// System.out.println(order);
 		//Conversão de string para enum
 		// só passar o nome do metodo que vc quer ventro de OrderStatus.valueOf("***")
-		Order order2= new Order(1080, new Date(), OrderStatus.valueOf("DELIVERED"));
-		System.out.println(order2);
+		// Order order2= new Order(1080, new Date(), OrderStatus.valueOf("DELIVERED"));
+		// System.out.println(order2);
 
 		// vamos falar sobre design 
 		//categorias de classes ==> em um sistema orientado a objetos m de modo geral "tudo" é objeto 
@@ -137,7 +142,51 @@ public class Program {
 		// sc.close();
 
 		//Exercicio de fixação
-		                                                                                
+		Locale.setDefault(Locale.US);
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		Scanner sc = new Scanner(System.in);
+		
+		
+		
+		System.out.println("Enter client data:");
+		System.out.print("Name: ");
+		String name = sc.nextLine();
+		System.out.print("Email: ");
+		String email = sc.next();
+		System.out.print("Birth date (DD/MM/YYYY): ");
+		Date birthDate = sdf.parse(sc.next());
+		Client client = new Client(name, email, birthDate);
+
+		System.out.println("Enter order data:");
+		System.out.print("Status: ");
+		OrderStatus status =  OrderStatus.valueOf(sc.next());
+		
+		Date data = new Date();
+		Ordr2 order  = new Ordr2(data, status, client);
+
+
+		System.out.println("How many item to this order?");
+		int n = sc.nextInt();
+
+		for (int i = 0; i < n; i++) {
+			sc.nextLine();
+			System.out.println("Product " + ( i +1) );
+			System.out.println("What name this product?");
+			String nameProduct = sc.nextLine(); 
+			System.out.println("How many price of this product?");
+			Double priceProduct = sc.nextDouble();
+			System.out.println("How many quantity?");
+			int quantityProduct = sc.nextInt();
+			Product product = new Product(nameProduct, priceProduct);
+			OrderItem item = new OrderItem(quantityProduct, priceProduct, product);
+			order.addItem(item);
+		}
+		System.out.println(order);
+
+
+
+
+		sc.close();                                                                             
 
 
 

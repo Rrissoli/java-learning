@@ -23,8 +23,16 @@ public class OrderItem {
         this.price = price;
         this.product = product;
     }
-    public Double subTotal (){
-        double precoFinal = this.product.getPrice() * quantity;
-        return precoFinal;
+    
+    public OrderItem() {
     }
+    public Double subTotal (){
+        double priceFinal = this.price * this.quantity;
+        return priceFinal;
+    }
+    @Override
+    public String toString() {
+        return  product.getName() + "," + this.price + "quantity:" + this.quantity + "Subtotal:" + this.subTotal();
+    }
+    
 }

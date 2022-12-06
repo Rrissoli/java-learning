@@ -12,6 +12,15 @@ public class Client {
         this.email = email;
         this.birthDate = birthDate;
     }
+    
+    public Client() {
+    }
+
+    @Override
+    public String toString() {
+        return "name:" + name + ", email:" + email + ", birthDate:" + birthDate ;
+    }
+
     public String getName() {
         return name;
     }
