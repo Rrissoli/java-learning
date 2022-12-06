@@ -95,60 +95,70 @@ public class Program {
 		// double Salary = func.income(year, month);
 		// System.out.println("salario" + Salary);
 		// sc.close();
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Quantos posts são?");
-		int n = sc.nextInt();
-		List <Post> posts = new ArrayList<>(); 
-		SimpleDateFormat sdf =  new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-		for (int i = 0; i < n; i++) {
-			System.out.println("Post" + (i + 1));
-			System.out.println("Qual titulo?");
-			sc.nextLine();
-			String titulo = sc.nextLine();
-			System.out.println("Qual o Conteudo do post:");
-			String conteudo = sc.nextLine();
-			Date momento = new Date(); 
+		// Scanner sc = new Scanner(System.in);
+		// System.out.println("Quantos posts são?");
+		// int n = sc.nextInt();
+		// List <Post> posts = new ArrayList<>(); 
+		// SimpleDateFormat sdf =  new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		// for (int i = 0; i < n; i++) {
+		// 	System.out.println("Post" + (i + 1));
+		// 	System.out.println("Qual titulo?");
+		// 	sc.nextLine();
+		// 	String titulo = sc.nextLine();
+		// 	System.out.println("Qual o Conteudo do post:");
+		// 	String conteudo = sc.nextLine();
+		// 	Date momento = new Date(); 
 			
-			System.out.println("Deseja colocar likes ? (S) ou (N)");
-			int resp = sc.nextInt();
-			if(resp == 1){
-				Post post = new Post(momento, titulo, conteudo);
+		// 	System.out.println("Deseja colocar likes ? (S) ou (N)");
+		// 	int resp = sc.nextInt();
+		// 	if(resp == 1){
+		// 		Post post = new Post(momento, titulo, conteudo);
 				
-				posts.add(post);
-			}else{
-				Post post = new Post(momento, titulo, conteudo);
-				posts.add(post);
-			}	
+		// 		posts.add(post);
+		// 	}else{
+		// 		Post post = new Post(momento, titulo, conteudo);
+		// 		posts.add(post);
+		// 	}	
 			
-		}
-		System.out.println("Deseja colocar algum comentario?");
-		int resp2 = sc.nextInt();
-		if(resp2 == 1){
-			System.out.println("escolha qual post você quer adicionar");
-			int num = sc.nextInt();
-			Post postEscolhido = posts.get(num);
-			addComentarios(postEscolhido);
+		// }
+		// System.out.println("Deseja colocar algum comentario?");
+		// int resp2 = sc.nextInt();
+		// if(resp2 == 1){
+		// 	System.out.println("escolha qual post você quer adicionar");
+		// 	int num = sc.nextInt();
+		// 	Post postEscolhido = posts.get(num);
+		// 	addComentarios(postEscolhido);
 
-		}else{
-			for (Post post : posts) {
-				post.toString();
-			}
-		}
-		sc.close();
+		// }else{
+		// 	for (Post post : posts) {
+		// 		post.toString();
+		// 	}
+		// }
+		// sc.close();
+
+		//Exercicio de fixação
+		                                                                                
+
+
+
+
+
+
+
 	}
-	static void addComentarios(Post postEscolhido){
+	// static void addComentarios(Post postEscolhido){
 		
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Quantos comentarios são?");
-		int n2= sc.nextInt();
-		for (int j = 0; j < n2; j++) {
-			sc.nextLine();
-			System.out.println("Coloque o comentario: "  + (j+ 1));
-			Coments coment = new Coments(sc.nextLine());	
-			postEscolhido.addComent(coment);
+	// 	Scanner sc = new Scanner(System.in);
+	// 	System.out.println("Quantos comentarios são?");
+	// 	int n2= sc.nextInt();
+	// 	for (int j = 0; j < n2; j++) {
+	// 		sc.nextLine();
+	// 		System.out.println("Coloque o comentario: "  + (j+ 1));
+	// 		Coments coment = new Coments(sc.nextLine());	
+	// 		postEscolhido.addComent(coment);
 			
-		}
-		postEscolhido.toString();
-	}
+	// 	}
+	// 	 postEscolhido.toString();
+	// }
 	
 }
