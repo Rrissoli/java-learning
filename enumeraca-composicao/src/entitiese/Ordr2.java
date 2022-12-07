@@ -10,7 +10,7 @@ import entities.enums.OrderStatus;
 import entitiese.OrderItem;
 public class Ordr2 {
 
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     private Date moment;
     private OrderStatus status;
     private Client client;
