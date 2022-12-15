@@ -7,9 +7,12 @@ import java.util.Scanner;
 
 import entities.Account;
 import entities.BusnessAcount;
+import entities.Company;
 import entities.Employee;
+import entities.Individual;
 import entities.OutsourcedEmployee;
 import entities.SavingsAccount;
+import entities.TaxPayer;
 
 public class Main {
 
@@ -187,7 +190,53 @@ public class Main {
 		
 		// sc.close();
 		
+		//exercício de fixação 2
+		Scanner sc = new Scanner(System.in);
+		List <TaxPayer> payers = new ArrayList<TaxPayer>();
+		System.out.print("Enter with numbers of taxpayers: ");
+		int n = sc.nextInt();
+		for (int i = 0; i < n; i++) {
+			System.out.println("Taxpayer" + (i +1) + " data:");
+			System.out.println("Is a individual or company? (i/c) ");
+			char resp = sc.next().charAt(0);
+			sc.nextLine();
+			System.out.println("what ur name ?");
+			String name = sc.nextLine();
+			System.out.println("What is ur anual income:");
+			Double anualIncome = sc.nextDouble();
+			
+			if(resp == 'i'){
+				System.out.println("How Many u pay for health expendures?");
+				Double healthExpendures = sc.nextDouble();
+				System.out.println("swedf");
+				TaxPayer payerIndividual = new Individual(name, anualIncome, healthExpendures);
+				payers.add(payerIndividual);
+			}
+			else{
+				System.out.println("How Many employees work in the company?");
+				int numberOfEmployees = sc.nextInt();
+				TaxPayer payerCompany = new Company(name, anualIncome, numberOfEmployees);
+				payers.add(payerCompany);
+			}
+			
+		}
+		for (TaxPayer taxPayer : payers) {
+			System.out.println("TAXES PAID: ");
+			System.out.printf("%s: $ %.2f", taxPayer.getName(), taxPayer.tax());
+		}
+	
+		sc.close();
 
+
+
+
+
+		// Métodos  abstratos
+		//==> são métodos que não possuem implementação 
+		// --> métodos precisam ser abstrados quando a classe é generica demais para conter sua implementação
+		// Se uma classe possuir pelo menos um metodo abstrato , então esta classe tambem é abstrata
+		// notação uml : itálico
+		 
 
 	}
 }
