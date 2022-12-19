@@ -1,5 +1,7 @@
 package application;
 
+import java.util.Scanner;
+
 public class Main {
 	public static void main(String[]args) {
 		// dISCUSSÃO INICIAL SOBRE EXCESSÕES
@@ -21,6 +23,34 @@ public class Main {
 				//  |- IndexOutOfBoundsException
 				//	|- NullPointerException
 
-		//oifsadfidfjsdspdlf
+		// pra que excessões ?
+		// o modelo de tratamento de exceções permite que erros sejam tratados de forma consistente e flexível, usando boas práticas
+		// Vantagens
+		// Delega a lógica do erro para a classe responsável por conhecer as regras  que podem ocasionar o erro
+		// trata de forma organizada ( inclusive hierarquica ) exceções de tipos diferentes 
+		// A exceção pode carregar dados quaisquer
+		
+		
+		
+		// Estrutura try-catch
+
+		// Bloco try 
+		// Contem codigo que representa a execução normal do trecho de código que pode acarretar em uma exceção 
+		// Bloco Catch
+		// contem o código a ser executado caso uma excessão ocorra 
+		// Deve ser específicado o tipo da exceção a ser tratada ( upcasting é permitido)
+		//Demo
+		try {
+			
+		} catch (Exception e) {
+			// se acontecer uma exceção do tipo "e"
+		};
+		// em cada bloco catch eu pego o  tipo de exceção
+		//Exemplo:
+		Scanner sc = new Scanner(System.in);
+		String[] vect = sc.nextLine().split(" ");
+		int position = sc.nextInt();
+		System.out.println(vect[position]);
+		sc.close(); 
 	}
 }
