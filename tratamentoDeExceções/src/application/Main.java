@@ -1,5 +1,6 @@
 package application;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -47,10 +48,75 @@ public class Main {
 		};
 		// em cada bloco catch eu pego o  tipo de exceção
 		//Exemplo:
+		// 	Scanner sc = new Scanner(System.in);
+		// try {
+		// 	String[] vect = sc.nextLine().split(" ");
+		// 	int position = sc.nextInt();
+		// 	System.out.println(vect[position]);
+		// } catch (ArrayIndexOutOfBoundsException e) {
+		// 	System.out.println("Invalid Position");
+		// }catch (InputMismatchException e){
+		// 	System.out.println("Input error");
+		// }
+		// sc.close(); 
+
+		//Exemplo2 =>
+		method1();
+		System.out.println("End Program");
+
+
+
+
+		// Bloco Finally
+		// é um bloco que contem código a ser executado independentemente de ter ocorrido ou não uma exceção
+		// exemplo classico : fechar um arquivo, conexão de banco de dados , ou outro recurso específico ao final do processamento
+		//Sintaxe:
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {
+
+		};
+
+
+		//sugestao de pacotes model
+		// Model
+		// | --  entities
+		// | -- enums
+		// | -- exception
+		// | -- services
+		
+		// tipos de solução de execução
+		// solução 1 => muito ruim => lógica de validação no programa principal
+		// solução 2 => Ruim => método retornando String
+		// solução 3 => Boa => tratamento de exceções
+
+		//SISTEMA DE HOTEL
+		
+		
+
+
+	}
+	public static void method1() {
+		System.out.println("*** METHOD1 START ***");
+		metod2();
+		System.out.println("METHOD1 END");
+	}
+	public static void metod2() {
+		System.out.println("***METHOD 2 START ****");
 		Scanner sc = new Scanner(System.in);
-		String[] vect = sc.nextLine().split(" ");
-		int position = sc.nextInt();
-		System.out.println(vect[position]);
+		try {
+			String[] vect = sc.nextLine().split(" ");
+			int position = sc.nextInt();
+			System.out.println(vect[position]);
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("Invalid Position");
+			e.printStackTrace();
+			sc.next();
+		}catch (InputMismatchException e){
+			System.out.println("Input error");
+		}
 		sc.close(); 
 	}
 }
