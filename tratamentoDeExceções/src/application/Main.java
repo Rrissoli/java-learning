@@ -92,8 +92,8 @@ public class Main {
 		// solução 2 => Ruim => método retornando String
 		// solução 3 => Boa => tratamento de exceções
 
-		//SISTEMA DE HOTEL
-		
+		//exercicio de fixação
+
 		
 
 
