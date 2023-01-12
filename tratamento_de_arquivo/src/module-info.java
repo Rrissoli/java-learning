@@ -5,5 +5,5 @@
  * @author user
  *
  */
-module curso_ja {
+module tratamento_de_arquivos {
 }
