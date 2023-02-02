@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="src/" kind="src" path="comportamento-de-memoria"/>
+	<classpathentry kind="src" path="comportamento-de-memoria/src"/>
+	<classpathentry kind="src" path="construtores-this-encapsulamento/src"/>
+	<classpathentry kind="src" path="DataFormatacao/src"/>
+	<classpathentry kind="src" path="enumeraca-composicao/src"/>
+	<classpathentry kind="src" path="estrutura-condicional/curso_ja/src"/>
+	<classpathentry kind="src" path="estruturas-repetitivas/curso_ja/src"/>
+	<classpathentry kind="src" path="heranca-polimorfismo/src"/>
+	<classpathentry kind="src" path="interface/src"/>
+	<classpathentry kind="src" path="introducao-alinguagem/curso_ja/src"/>
+	<classpathentry kind="src" path="introducao-alinguagem/exercicios/src"/>
+	<classpathentry kind="src" path="POO/conteudo/src"/>
+	<classpathentry kind="src" path="sistemaDeXadrez/src"/>
+	<classpathentry kind="src" path="SystemHotel/src"/>
+	<classpathentry kind="src" path="tratamento_de_arquivo/src"/>
+	<classpathentry excluding="application/" kind="src" path="tratamento_de_arquivos/src"/>
+	<classpathentry kind="src" path="tratamento_de_arquivos/src/application"/>
+	<classpathentry kind="output" path="DataFormatacao/bin"/>
+</classpath>
