@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Date;
+import java.util.HashMap;
 import java.time.Instant;
 import java.time.LocalDate;
 
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
@@ -176,27 +178,27 @@ public class Program {
 
 		// 	Product prod = new Product("TV", 900.00);
 		// 	System.out.println(set2.contains(prod));
-		String path2 = "/home/user/in.txt";
+		// String path2 = "/home/user/in.txt";
 		
 			
-		try (BufferedReader br2 = new BufferedReader(new FileReader(path2))){
-			Set<Log> set = new HashSet<>();
+		// try (BufferedReader br2 = new BufferedReader(new FileReader(path2))){
+		// 	Set<Log> set = new HashSet<>();
 			
-			String line = br2.readLine();
-			while (line != null) {
-				String[] field = line.split(" ");
-				String name = field[0];
-				Date moment = Date.from(Instant.parse(field[1]));
-				Log log = new Log(name, moment);
-				set.add(log);
-				br2.readLine();
-			}
-			System.out.println(set);
-		}
+		// 	String line = br2.readLine();
+		// 	while (line != null) {
+		// 		String[] field = line.split(" ");
+		// 		String name = field[0];
+		// 		Date moment = Date.from(Instant.parse(field[1]));
+		// 		Log log = new Log(name, moment);
+		// 		set.add(log);
+		// 		br2.readLine();
+		// 	}
+		// 	System.out.println(set);
+		// }
 			
-			catch(IOException e) {
-				System.out.println("Error: " + e.getMessage());
-			}
+		// 	catch(IOException e) {
+		// 		System.out.println("Error: " + e.getMessage());
+		// 	}
 		
 
 
@@ -212,6 +214,26 @@ public class Program {
 			// hashmap: mais rapido e nao ordenado
 			//treemap: mais lento e ordenado pelo compareTo do objeto (ou Comparador)
 			// LinkedHashMap : velocidade intermediaria e elementos na ordem em que são adicionados
+		//metodos importantes
+		// put(key, value ), remove(key), contains(key), get(key)
+		// clear()
+		// size()
+		// keyset() retorna um Set<K>
+		// values() retorna um Collection<v>
+
+			// example
+			Map<Product, Double> stock = new HashMap<>();
+			Product p1 = new Product("TV", 900.00);
+			Product p2 = new Product("note V", 1666.00);
+			Product p3 = new Product("barco", 12355.00);
+
+			stock.put(p1, 10000.00);
+			stock.put(p2, 1999.00);
+			stock.put(p3, 990000.00);
+			Product ps = new Product("TV", 900.00);
+			System.out.println(stock.containsKey(ps));
+
+
 
 }
 
