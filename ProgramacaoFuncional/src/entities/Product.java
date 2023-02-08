@@ -45,6 +45,23 @@ public class Product {
             return false;
         return true;
     }
-   
+    public static boolean staticProductPredicate(Product p){
+        return p.getPrice() >= 100.00;
+    }
+    public  boolean nonStaticProductPredicate(){
+        return price >= 100.00;
+    }
+    public static void staticUpdatePrice (Product p){
+        p.setPrice(p.getPrice() * 1.1);
+    }
+    public  void nonstaticUpdatePrice (){
+        setPrice(getPrice() * 1.1);
+    }
+    public static String staticUpperCase(Product p){
+     return p.getName().toUpperCase();
+    }
+    public  String nonStaticUpperCase(){
+        return getName().toUpperCase();
+       }
     
 }
