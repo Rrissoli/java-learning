@@ -1,9 +1,13 @@
 package application;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Scanner;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -192,7 +196,33 @@ public class Program {
 		System.out.println(Arrays.toString(st5.toArray()));
 		int sum1 = list4.stream().reduce(0,(x,y) -> x + y);
 		System.out.println(sum1);
+		// exercicio resolvido
+		Scanner sc = new Scanner(System.in);
+		List<Product> listProduct = new ArrayList<>();
+		System.out.println("Enter with path:");
+		String fileString = sc.nextLine();
+		try (BufferedReader br = new BufferedReader(new FileReader(fileString))){
+			String itemCsv = br.readLine();
+			while(itemCsv != null){
+				String[] fields = itemCsv.split(",");
+				String name = fields[0];
+				Double price = Double.parseDouble(fields[1]);
+				Product p = new Product(name, price);
+				listProduct.add(p);
+				itemCsv = br.readLine();
+			}
+			System.out.print("Average Price of List Products:");
+			double avg = listProduct.stream().map(p -> p.getPrice()).reduce(0.0, (x,y) -> x + y)/listProduct.size();
+			System.out.println(avg);
+			// List<String> names2 = listProduct.stream().filter(p -> p.getPrice() < avg).map(p -> p.getName());
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 		
+		
+		///home/user/Área de Trabalho/Java-Learning/in.csv
+		sc.close();
+
 	}
 	
 
